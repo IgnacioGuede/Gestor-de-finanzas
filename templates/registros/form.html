@@ -1,0 +1,24 @@
+<div class="div_form">
+    <form class="form_estilo" action="" method="POST"> {% csrf_token %}
+        <div id="div_form">
+            <label class="label_form" for="descripcion">Descripcion</label>
+            <input class="input" type="text" value="{{ registro.descripcion}}" name="descripcion">
+
+            <label class="label_form"  for="etiqueta">Etiqueta {{ filtros.etiqueta }}</label>
+            <select class="input" name="etiqueta">
+                <option value="None">Sin etiqueta</option>
+                {% for etiqueta in etiquetas %}
+                    <option value="{{ etiqueta.nombre }}">{{ etiqueta.nombre }}</option>
+                {% endfor %}
+            </select>
+            
+            <label class="label_form" for="valor">Valor</label>
+            <input class="input" type="number" required value="{{ registro.valor }}" name="valor">
+        </div>
+        <div id="div_form_opciones">
+            <button class="link" type="submit">Guardar</button>
+            <button class="link"><a href="{% url 'registros' %}">Volver</a></button>
+        </div>
+    </form>
+    {{ mensaje }}
+</div>

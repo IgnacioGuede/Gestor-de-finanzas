@@ -1,0 +1,28 @@
+{% extends 'registros/registros.html' %}
+{% load static %}
+
+
+{% block titulo %} Gestor de Finanzas - Crear registro {% endblock %}
+
+
+{% block registros_content %}
+    <div class="div_form">
+        <form class="form_estilo" action="" method="post">{% csrf_token %}
+            <div id="div_form">
+                <label class="label_form" for="nombre">Nombre para backup</label>
+                <input class="input" type="text" name="nombre" value="Backup">
+                
+                <label class="label_form" for="extension">Guardar como</label>
+                <select class="input" name="extension">
+                    <option value=".txt">Archivo de texto .txt</option>
+                    <option value=".csv">valores separados por coma .csv</option>
+                </select>
+            </div>
+            <div id="div_form_opciones">
+                <button class="link" type="submit">Guardar</button>
+                <button class="link"><a href="{% url 'registros' %}">Volver</a></button>
+            </div>
+        </form>
+        {{ mensaje }}
+    </div>
+{% endblock registros_content %}

@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block titulo %} Gestor de finanzas - Etiquetas {% endblock %}
+
+
+{% block contenido %}
+    <div class="container">
+        <header class="cabecera_opciones">
+
+            <h2>{{ informacion }}</h2>
+
+            <a class="link" href="{% url 'create' %}">Agregar etiqueta</a>
+        
+            <form action="{% url 'search' %}">
+                <input class="link" type="submit" value="Buscar etiquetas">
+                <input class="input" name="buscar" type="text" placeholder="&#128270...">
+            </form>
+
+        </header>
+    </div>
+    
+    {% block etiquetas_content %}
+        <div>
+            {% if ocultar %}
+                <a class="link" href="{% url 'etiquetas' 0 %}">Mostrar todas</a>
+            {% else %}
+                <a class="link" href="{% url 'etiquetas' 1 %}">Mostrar solo visibles</a>
+            {% endif %}
+
+            <table class="tabla">
+                <td class="td_cabecera" id="td_campo">Nombre</td>
+                <td class="td_cabecera" id="td_campo">Ocultar</td>
+                <td class="td_cabecera" id="td_opcion">Modificar</td>
+                <td class="td_cabecera" id="td_opcion">Borrar</td>
+
+                {% for etiqueta in etiquetas %}
+                    <tr>
+                        <td class="td_contenido">{{ etiqueta.nombre }}</td>
+
+                        {% if etiqueta.oculta %}
+                            <td class="td_contenido"> <img class="img_opcion" src="{% static 'img/check.png' %}"> </td>
+                        {% else %}
+                            <td class="td_contenido"> <img class="img_opcion" src="{% static 'img/cruz.png' %}"> </td>
+                        {% endif %}
+
+                        <td class="td_contenido"><a href="{% url 'update' etiqueta.id %}"><img class="img_opcion" src="{% static 'img/lapiz.png' %}"> Modificar </a></td>
+                        <td class="td_contenido"><a href="{% url 'delete' etiqueta.id %}"><img class="img_opcion" src="{% static 'img/goma.png' %}"> Borrar </a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endblock etiquetas_content %}
+    
+{% endblock contenido %}

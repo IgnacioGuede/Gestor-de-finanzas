@@ -1,0 +1,60 @@
+/* ESTILO PARA BASE.HTML*/
+/* contenedor principal */
+.base{
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+.container_cabecera {
+    width: 100%;
+    float: inline-start;
+}
+
+/* titulo de la app */
+.titulo {
+    float: left;
+    width: 50%;
+    border-radius: 50px;
+    border-color: rgb(156, 156, 255);
+    background-color: rgb(193, 193, 246);
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* cabecera principal con menues*/
+.cabecera {
+    float: right;
+    width: 40%;
+    margin-top: 3%;
+}
+
+/* link de la cabecera principal */
+.cabecera_link {
+    background-color: rgb(53, 143, 173);
+    text-align: center;
+    padding: 7px 18px 18px 7px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    margin-right: 1% ;
+    color: white;
+}
+
+.contenido {
+    width: 100%;
+}
+
+
+/*  ------------------------    ESTILO PARA ETIQUETAS.HTML      ------------------------------  */
+
+.etiquetas_menu {
+    background-color: rgb(53, 143, 173);
+    text-align: center;
+    padding: 7px 18px 18px 7px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    margin-right: 1% ;
+    color: white;
+}

@@ -1,0 +1,185 @@
+/* anular formato establecido */
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+a :visited{
+    color: black;
+}
+
+
+
+/*  ---------------------  ESTILOS GENERALES  -------------    */ 
+
+/*    --------   DIV   ----------     */
+/* para desplegar contenido de de manera horizontal de cualquier div, excepto el general */
+.container{
+    display: flex
+}
+
+
+
+
+/*    --------   BOTONES Y LETRA   ----------     */
+
+/* CSS para todos los links de la pagina (los botones en azul)
+todos conducen a una URL( algunos son <a> y otros <input> */
+.link{
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: rgba(53, 143, 173, 0.80);
+    border: solid 2px rgba(53, 143, 173, 0.80);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.link:hover{
+    background-color: white;
+    color: rgb(89, 87, 87);  
+}
+
+
+/* Para inputs de formularios */
+.input{
+    border-radius: 5px;
+    height: 25px;
+    border: solid 2px;
+}
+
+/* Para mostrar texto e informacion util en  */
+h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+/*    --------   TABLAS   ----------     */
+
+/* PARA TODAS LAS TABLAS */
+/* separacion de tablas  */
+.tabla{
+    margin-top: 3%;
+}
+
+/* cabeceras de tablas */
+.td_cabecera{
+    height: 50px;
+    border: 1px solid rgb(78, 60, 47);
+    background-color: rgb(215, 205, 191);
+}
+#td_campo{
+    width: 230px;
+}
+
+/* opciones cabeceras de tablas */
+#td_opcion{
+    width: 100px;
+}
+
+/* para informacion que aparece */
+.td_contenido {
+    border: solid 1px rgb(205, 205, 205)
+}
+
+.td_contenido:hover{
+    background-color: rgb(200, 206, 207);
+    border: solid black 1px;
+}
+
+/* para imagenes de opciones*/
+.img_opcion{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+
+/*    --------   FORMULARIOS   ----------     */
+
+.label_form{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    font-weight: 600;
+    padding: 2%;
+}
+
+
+/*------------------------------------- BASE.HTML ---------------------------------------------*/
+
+/* titulo de la app */
+#titulo {
+    margin: 1% 5% 0% 5%;
+    width: 90%;
+    text-align: center;
+    border-radius: 50px;
+    padding: 10px 0px 20px;
+    background-color: rgb(169, 183, 210);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* cabecera principal bajo el titulo*/
+#cabecera {
+    width: 95,8%;
+    padding: 2%;
+    margin-top: 1%;
+    background-color: rgb(126, 171, 232);
+    border: solid 3px rgb(102, 137, 186);
+}
+
+
+
+/*  --------------------------------------------------   ETIQUETAS.HTML      ---------------------------------------------  */
+
+.cabecera_opciones{
+    display: flex;
+    margin: 1% -8px 2% 0%;
+    width: 100%;
+    background-color: rgb(219, 219, 219);
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+/*   ------------------------------------------      REGISTROS.HTML     ----------------------------------------------      */
+
+/* container para cada filtro posible en la pagina principal de registros */
+#div_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#div_form_opciones{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30%;
+}
+
+#form_boton{
+    margin-left: 30px;
+}
+
+
+/*          ------------------------------------------------------                 */
+            /* Todo relacionado a formularios  */
+/*          ------------------------------------------------------                 */
+
+/* Principal contenedor de los formularios, todos estan contenidos en este div */container_forms
+.div_form{
+    margin: 1% 15%;
+}
+
+/* Estilo de todos los formularios, borde, margen, color de fondo etc*/
+.form_estilo{
+    display: flex;
+    border: solid 6px rgb(131, 131, 131);
+    border-radius: 20px;
+    padding: 1%;
+    background-color: rgb(203, 203, 203);
+    justify-content: space-around;
+    margin: 0% 15%;
+}

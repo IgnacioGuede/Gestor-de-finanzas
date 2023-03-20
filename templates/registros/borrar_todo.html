@@ -1,0 +1,20 @@
+{% extends 'registros/registros.html' %}
+{% load static %}
+
+
+{% block titulo %} Gestor de finanzas - Borrar registro{% endblock titulo %}
+
+
+{% block registros_content %}
+    <div class="div_form">
+        <form class="form" method="post">{% csrf_token %}
+            <div>
+                <p>Esta seguro de borrar todos los registros? Se borraran para siempre (eso es mucho tiempo)</p>
+            </div>
+            <div>
+                <button class="link" type="submit">Guardar</button>
+                <button class="link"><a href="{% url 'registros' %}">Volver</a></button>
+            </div>
+        </form>
+    </div>
+{% endblock registros_content %}

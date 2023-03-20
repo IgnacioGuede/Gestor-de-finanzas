@@ -1,0 +1,58 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block titulo %} Gestor de Finanzas - Etiquetas {% endblock %}
+
+
+{% block contenido %}
+    <div class="container">
+        <header class="cabecera_opciones">
+
+            {% for info in informacion %}
+                <h2>{{ info }}</h2>
+            {% endfor %}
+            
+            <a class="link" id="menu" href="{% url 'registros_create' %}">Agregar registros</a>
+        </header>
+    </div>
+
+    {% block registros_content %}   
+
+    {% include 'registros/form_filtro.html' %}
+ 
+    <div>
+        <table class="tabla">
+            <tr>
+                <td class="td_cabecera" id="td_campo">Descripción</td>
+                <td class="td_cabecera" id="td_campo">Etiqueta</td>
+                <td class="td_cabecera" id="td_campo">Valor</td>
+                <td class="td_cabecera" id="td_campo">Fecha de creación</td>
+                <td class="td_cabecera" id="td_opcion">Modificar</td>
+                <td class="td_cabecera" id="td_opcion">Borrar</td>
+            </tr>
+
+        {% for registro in registros %}
+            <tr>
+                <td class="td_contenido"> {{ registro.descripcion }}</td>
+                <td class="td_contenido"> {{ registro.etiqueta.nombre }} </td>
+                <td class="td_contenido"> {{ registro.valor }} </td>  
+                <td class="td_contenido"> {{ registro.fecha }} </td>
+                <td class="td_contenido"> <a href="{% url 'registros_update' registro.id %}"><img class="img_opcion" src="{% static 'img/lapiz.png' %}"> Modificar </a> </td>
+                <td class="td_contenido"> <a href="{% url 'registros_delete' registro.id %}"><img class="img_opcion" src="{% static 'img/goma.png' %}"> Borrar </a> </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+    <div class="container">
+        <header class="cabecera_opciones">
+            <a class="link" id="menu" href="{% url 'registros_borrar_todo' %}">Borrar todos los registros</a>
+            <a class="link" id="menu" href="{% url 'registros_exportar' %}">Exportar registros</a>
+            <a class="link" id="menu" href="{% url 'registros_importar' %}">Importar registros</a>
+        </header>
+    </div>
+
+    {% endblock registros_content %}
+
+{% endblock contenido %}

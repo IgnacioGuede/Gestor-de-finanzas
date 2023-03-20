@@ -1,0 +1,25 @@
+{% extends 'etiquetas/etiquetas.html' %}
+{% load static %}
+
+
+{% block titulo %} Gestor de finanzas - Borrar etiqueta {% endblock titulo %}
+
+
+{% block etiquetas_content %}
+    <div class="div_form">
+        <form class="form_estilo" method="post" > {% csrf_token %}
+            <div id="div_form">
+                <p class="label_form">Esta seguro de borrar la etiqueta '{{object.nombre}}'?
+                    {% if uso_etiqueta == 0 %}
+                        la etiqueta no se esta usando
+                    {% else %}
+                        La etiqueta es usada en {{ uso_etiqueta }} registros
+                    {% endif %}
+                </p>
+            </div>
+            <div id="div_form_opciones">
+                <input class="link" type="submit" value="Confirmar">
+            </div>
+        </form>
+    </div>
+{% endblock etiquetas_content %}

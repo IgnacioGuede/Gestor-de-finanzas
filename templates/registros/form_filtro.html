@@ -1,0 +1,31 @@
+<div class="div_form">
+    <form class="form_estilo" action=" {% url 'registros_search' %}">
+        <div id="div_form">
+            <label class="label_form" for="descripcion">Descripción</label>
+            <input class="input" type="text" name="descripcion" value="{{ filtros.descripcion }}" placeholder="Descripción...">
+        </div>
+
+        <div id="div_form">
+            <label class="label_form" for="valor">Valor</label>
+            <input class="input" type="number" name="valor" value="{{ filtros.valor }}" placeholder="Valor...">
+        </div>
+
+        <div id="div_form">
+            <label class="label_form" for="etiqueta">Etiqueta</label>
+            <select class="input" name="etiqueta">
+                <option value="None">Sin etiqueta</option>
+                {% for etiqueta in etiquetas %}
+                    {% if etiqueta.nombre == filtros.etiqueta %}
+                        <option class="input" value="{{ etiqueta.nombre }}" selected>{{ etiqueta.nombre }}</option>
+                    {% else %}
+                        <option class="input" value="{{ etiqueta.nombre }}">{{ etiqueta.nombre }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div id="div_form_opciones">
+            <input class="link" type="submit" value="Filtrar">
+            <a class="link" href="{% url 'registros' %}">Borrar Filtros</a>
+        </div>
+    </form>
+</div>

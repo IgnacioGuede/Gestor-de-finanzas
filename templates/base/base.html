@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>{% block titulo %} TITULO {% endblock titulo %}</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1 id="titulo">Gestor de finanzas &#128142</h1>
+        </div>
+        <div>
+            <header id="cabecera">
+                <a class="link" href="{% url 'home' %}">Menu principal</a>
+                <a class="link" href="{% url 'registros' %}">Registros</a>
+                <a class="link" href="{% url 'etiquetas' 1 %}">Etiquetas</a>
+            </header>
+        </div>
+        
+        {% block contenido %}
+        {% endblock contenido %}
+    </div>
+</body>
+</html>
+
+
+
+
